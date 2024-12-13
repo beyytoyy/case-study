@@ -4,6 +4,7 @@ import SidebarLayout from './components/SidebarLayout';
 import Dashboard from './pages/Dashboard';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
+import GeoJsonMap  from './pages/GeoJsonMap';
 import Login from './pages/Login'; // A page without the sidebar
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
                 <Route path="/" element={<SidebarLayout />}>
                     <Route index element={<Dashboard />} />
                     <Route path="reports" element={<Reports />} />
+                    <Route path="map" element={<GeoJsonMap />} />
                     <Route path="settings" element={<Settings />} />
                 </Route>
 

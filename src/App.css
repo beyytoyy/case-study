@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+/* Prevent horizontal scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* Allow vertical scrolling */
+.main-content {
+  overflow-y: auto;
+  max-width: 100%; /* Prevent content from exceeding screen width */
+}
+
+/* Box sizing for consistent layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+

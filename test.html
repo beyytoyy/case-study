@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mapbox Outdoors Test</title>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+  <style>
+    body, html { margin: 0; padding: 0; }
+    #map { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoiam9obm1hcmswNjI4MDIiLCJhIjoiY200bWxtNGtxMGYweTJqb2R3NG1hbGVibyJ9.icBQC80kNfsVp3z3C7Wf4Q';
+    const map = new mapboxgl.Map({
+      container: 'map', // container ID
+      projection: 'globe',
+      style: 'mapbox://styles/mapbox/satellite-v9', // Outdoors style
+    });
+
+    map.on('style.load', () => {
+        map.setFog({
+            color: 'rgb(186, 210, 235)', // Lower atmosphere
+            'high-color': 'rgb(36, 92, 223)', // Upper atmosphere
+            'horizon-blend': 0.02, // Atmosphere thickness (default 0.2 at low zooms)
+            'space-color': 'rgb(11, 11, 25)', // Background color
+            'star-intensity': 0.6 // Background star brightness (default 0.35 at low zoooms )
+        });
+    });
+
+    map.on('load', () => {
+      console.log('Map loaded successfully');
+    });
+  </script>
+</body>
+</html>
