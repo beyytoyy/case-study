@@ -9,7 +9,6 @@ const SidebarLayout = () => {
         '/': 'Dashboard',
         '/reports': 'Reports',
         '/map': 'GeoJSON Map',
-        '/chart': 'Charts',
         '/settings': 'Settings',
     };
 
