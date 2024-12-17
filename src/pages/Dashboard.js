@@ -44,47 +44,23 @@ const Dashboard = () => {
         ]
     };
 
-    const doughnutData = {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+    const scatterData = {
         datasets: [
             {
-                data: [300, 50, 100, 150, 200],
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#66BB6A', '#9575CD'],
-                hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#66BB6A', '#9575CD']
+                label: 'Scatter Dataset',
+                data: [
+                    { x: 10, y: 20 },
+                    { x: 15, y: 10 },
+                    { x: 20, y: 30 },
+                    { x: 25, y: 25 },
+                    { x: 30, y: 35 }
+                ],
+                backgroundColor: '#36A2EB', // Default dot color
+                pointRadius: 6, // Size of points
+                pointHoverRadius: 8 // Size of points on hover
             }
         ]
-    };
-
-    const radarData = {
-        labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Running'],
-        datasets: [
-            {
-                label: '2023',
-                backgroundColor: 'rgba(179,181,198,0.2)',
-                borderColor: 'rgba(179,181,198,1)',
-                pointBackgroundColor: 'rgba(179,181,198,1)',
-                data: [65, 59, 90, 81, 56, 55]
-            },
-            {
-                label: '2024',
-                backgroundColor: 'rgba(255,99,132,0.2)',
-                borderColor: 'rgba(255,99,132,1)',
-                pointBackgroundColor: 'rgba(255,99,132,1)',
-                data: [28, 48, 40, 19, 96, 27]
-            }
-        ]
-    };
-
-    const polarData = {
-        labels: ['Sales', 'Expenses', 'Revenue', 'Profit'],
-        datasets: [
-            {
-                data: [11, 16, 7, 14],
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#66BB6A'],
-                label: 'Dataset 1'
-            }
-        ]
-    };
+    };    
 
     return (
         <div className="grid">
@@ -105,17 +81,7 @@ const Dashboard = () => {
             </div>
             <div className="col-6">
                 <Card title="Doughnut Chart">
-                    <Chart type="doughnut" data={doughnutData} />
-                </Card>
-            </div>
-            <div className="col-6">
-                <Card title="Radar Chart">
-                    <Chart type="radar" data={radarData} />
-                </Card>
-            </div>
-            <div className="col-6">
-                <Card title="Polar Area Chart">
-                    <Chart type="polarArea" data={polarData} />
+                    <Chart type="scatter" data={scatterData} />
                 </Card>
             </div>
         </div>
